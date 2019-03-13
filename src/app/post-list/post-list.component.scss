@@ -1,0 +1,42 @@
+#giphy{
+    max-width: 500px;
+    max-height: 300px;
+}
+
+.tag{
+    list-style: none;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 20px;
+    width: 50px;
+    margin-right: 30px;
+}
+.tag:hover{
+    text-decoration: none;
+    color: white;
+    background-color: black
+  }
+  .carousel{
+      margin-bottom: 50px;
+  }
+  .comment_name{
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .comments{
+      margin-bottom: 200px;
+  }
+  .comment_answer{
+      margin-top: 10px;
+      background: black;
+      color: white;
+      width: 100%;
+      border: none;
+      padding: 5px 5px 5px 0;
+  }
+  .comment_answer::placeholder{
+      color: white;
+      margin-left: 10px;
+  }

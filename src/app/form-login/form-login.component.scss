@@ -1,0 +1,50 @@
+body#form{
+    // background-image: url(../images/home.png);
+    background-size: 100%;
+}
+
+form{
+    padding: 60px;
+    width: 600px;
+    /* margin: 200px auto; */
+    margin: 150px auto;
+    background: white;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border: none;
+}
+.btn{
+    margin-top: 50px;
+    background: black;
+}
+a.form_link{
+    list-style: none;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    color: black;
+    margin-top: 40px;
+    width: 50px;
+}
+a.form_link:hover{
+  text-decoration: none;
+  color: white;
+  background-color: black
+}
+::-webkit-file-upload-button{
+background: black;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
