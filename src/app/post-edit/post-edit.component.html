@@ -17,8 +17,10 @@
    
       <button type="submit"
               [disabled]="!postForm.form.valid">Save</button>
+
       <button (click)="remove(post.href)"
               *ngIf="post.href" type="button">Delete</button>
+
       <a routerLink="/post-list">Cancel</a>
 
       <div class="giphy">

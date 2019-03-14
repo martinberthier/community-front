@@ -1,3 +1,6 @@
+
+<div id="body">
+
 <form>
 
     <h3>Connexion</h3>
@@ -16,6 +19,11 @@
 
   <button class="btn btn-primary ">Valider</button>
 
-  <a href="index.html" class="form_link">Retour</a>
+  <p>Pas encore de compte ? <span><a [routerLink]="['/form-register']"  class="inlineBtn" >Inscrivez-vous</a></span> </p>
+  
+
+  <a routerLink="/home" class="form_link">Retour</a>
 
 </form>
+
+</div>

@@ -23,6 +23,7 @@ export class PostEditComponent implements OnInit, OnDestroy {
     private postService: PostService,
     private giphyService: GiphyService
   ) { }
+ 
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {

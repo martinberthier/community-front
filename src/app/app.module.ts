@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostEditComponent } from './post-edit/post-edit.component'
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { SearchbarComponent } from './searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { FormsModule } from '@angular/forms';
     FormRegisterComponent,
     CategoryComponent,
     PostListComponent,
-    PostEditComponent
+    PostEditComponent,
+    NavbarComponent,
+    HomeComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,
