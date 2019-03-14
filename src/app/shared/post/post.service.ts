@@ -14,6 +14,10 @@ getAll(): Observable<any> {
   return this.http.get('//localhost:8080/community/comments');
   }
 
+  getAllByCategory(id: string): Observable<any> {
+    return this.http.get('//localhost:8080/community/categories/'+ `${id}` +'/comments');
+    }
+
   get(id: string) {
     return this.http.get('//localhost:8080/community/comments' + '/' + id);
   }

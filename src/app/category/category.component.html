@@ -1,4 +1,10 @@
 
-  <div *ngFor="let category of categories">
+  <div class="category-list"   *ngFor="let category of categories">
+  <!-- <a routerLink="/post-list-by-category/" class="category">  -->
+    <a [routerLink]="['/post-list-by-category', category.id]" class="category"> 
     {{category.name}}
+     <!-- {{category.id}} -->
+  </a>
+
+  <!-- [routerLink]="['/post-edit', post.id] -->
   </div>

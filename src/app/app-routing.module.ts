@@ -5,6 +5,7 @@ import { PostEditComponent } from './post-edit/post-edit.component';
 import { FormLoginComponent } from './form-login/form-login.component';
 import { FormRegisterComponent } from './form-register/form-register.component';
 import { HomeComponent } from './home/home.component';
+import { PostListByCategoryComponent } from './post-list-by-category/post-list-by-category.component';
 
 const routes: Routes = [
 
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'form-register',
     component: FormRegisterComponent
+  },
+  {
+    path: 'post-list-by-category/:id',
+    component: PostListByCategoryComponent
   },
   // {
   //   path: '**',

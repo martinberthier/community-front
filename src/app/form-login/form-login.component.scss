@@ -4,13 +4,15 @@ body#form{
 }
 
 form{
-    padding: 60px;
-    width: 600px;
+    padding:  50px 100px;
+    width: 500px;
     /* margin: 200px auto; */
-    margin: 150px  auto;
+    margin: 80px  auto;
     background: white;
 }
-
+.info-form{
+    margin-top: 30px;
+}
 .btn-primary {
     color: #fff;
     background-color: black;
@@ -20,8 +22,8 @@ form{
     border: none;
 }
 .btn{
+    float: right;
     margin-top: 20px;
-    margin-bottom: 20px;
     background: black;
 }
 a.form_link{
@@ -30,7 +32,7 @@ a.form_link{
     display: block;
     font-weight: bold;
     color: black;
-    margin-top: 40px;
+    margin-top: 30px;
     width: 50px;
 }
 a.form_link:hover{
@@ -83,7 +85,8 @@ background: black;
     background: -webkit-gradient(linear, left top, right top, color-stop(1.72%, #e76973), color-stop(23.88%, rgba(241, 137, 95, .8)), color-stop(49.2%, rgba(255, 231, 137, .8)), color-stop(75.2%, #99cead), color-stop(95.93%, #97d1ce)), #fff;
     background: linear-gradient(90deg, #e76973 1.72%, rgba(241, 137, 95, .8) 23.88%, rgba(255, 231, 137, .8) 49.2%, #99cead 75.2%, #97d1ce 95.93%), #fff;
     background-size: 600% 600%;
-    position: fixed;
+    // position: fixed;
+    overflow-y: scroll;
     -webkit-animation: Gradient 10s ease infinite;
     animation: Gradient 10s ease infinite;
     height: 100vh;

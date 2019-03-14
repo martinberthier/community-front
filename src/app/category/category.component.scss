@@ -1,0 +1,22 @@
+.category{
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+    color: #fff;
+    background-color: black;
+    font-weight: bold;
+    font-size: 2rem;
+    border: none;
+    width: 200px;
+    border-radius: 50px;
+}
+
+.category:hover{
+    color: black;
+    background-color: white;
+    text-decoration: none;
+}
+
+.category-list:first-child{
+    margin-top: 50px;
+}

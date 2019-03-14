@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
+import { PostListByCategoryComponent } from './post-list-by-category/post-list-by-category.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SearchbarComponent } from './searchbar/searchbar.component';
     PostEditComponent,
     NavbarComponent,
     HomeComponent,
-    SearchbarComponent
+    SearchbarComponent,
+    PostListByCategoryComponent
   ],
   imports: [
     BrowserModule,
