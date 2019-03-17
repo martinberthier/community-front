@@ -32,8 +32,8 @@ getAll(): Observable<any> {
     return result;
   }
 
-  remove(href: string) {
-    return this.http.delete(href);
+  remove(id: string) {
+    return this.http.delete('//localhost:8080/community/comments/'+ id);
   }
   
 }

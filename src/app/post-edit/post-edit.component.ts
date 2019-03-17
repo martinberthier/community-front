@@ -13,6 +13,7 @@ import { NgForm } from '@angular/forms';
 export class PostEditComponent implements OnInit, OnDestroy {
 
   post: any = {};
+  public id : string;
 
   sub: Subscription;
 
@@ -26,13 +27,15 @@ export class PostEditComponent implements OnInit, OnDestroy {
  
 
   ngOnInit() {
+  
     this.sub = this.route.params.subscribe(params => {
       const id = params['id'];
       if (id) {
         this.postService.get(id).subscribe((post: any) => {
           if (post) {
             this.post = post;
-            this.post.href = post._links.self.href;
+            console.log(this.post);
+            // this.post.href = post._links.self.href;
             this.giphyService.get(post.tag).subscribe(url => post.giphyUrl = url);
           } else {
             console.log(`Post with id '${id}' not found, returning to list`);
@@ -57,8 +60,8 @@ export class PostEditComponent implements OnInit, OnDestroy {
     }, error => console.error(error));
   }
 
-  remove(href) {
-    this.postService.remove(href).subscribe(result => {
+  remove(id) {
+    this.postService.remove(id).subscribe(result => {
       this.gotoList();
     }, error => console.error(error));
   }

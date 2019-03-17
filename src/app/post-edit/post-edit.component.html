@@ -1,7 +1,7 @@
 
   <form #postForm="ngForm" (ngSubmit)="save(postForm.value)">
    
-      <h2>{{post.name ? 'Edit' : 'Add'}} post</h2>
+      <h2>{{post.content ? 'Edit' : 'Add'}} post</h2>
     
     
       <input type="hidden" name="href" [(ngModel)]="post.href">
@@ -18,8 +18,8 @@
       <button type="submit"
               [disabled]="!postForm.form.valid">Save</button>
 
-      <button (click)="remove(post.href)"
-              *ngIf="post.href" type="button">Delete</button>
+      <button (click)="remove(post.id)"
+              *ngIf="post.id" type="button">Delete</button>
 
       <a routerLink="/post-list">Cancel</a>
 

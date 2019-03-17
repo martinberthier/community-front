@@ -16,6 +16,8 @@ import { HomeComponent } from './home/home.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { PostListByCategoryComponent } from './post-list-by-category/post-list-by-category.component';
 
+//service
+import {SigninService} from './services/signinService';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,8 @@ import { PostListByCategoryComponent } from './post-list-by-category/post-list-b
     NavbarComponent,
     HomeComponent,
     SearchbarComponent,
-    PostListByCategoryComponent
+    PostListByCategoryComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { PostListByCategoryComponent } from './post-list-by-category/post-list-b
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [SigninService],
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

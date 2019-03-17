@@ -1,10 +1,11 @@
+<h1>{{category}}</h1>
+
 <article class="comment" *ngFor="let post of posts">
   
   <img  id="giphy" src="{{post.giphyUrl}}" > <br/>
 
   <!-- <p class="comment_p"> {{post.content}} </p> -->
 
-  <h1>{{category.name}}</h1>
 
   <a [routerLink]="['/post-edit', post.id]">{{post.content}}</a>
 

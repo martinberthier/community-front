@@ -9,7 +9,8 @@
         required
         minlength="3"
         maxlength="10"
-        ngModel name="name"
+        [(ngModel)]="name"
+         name="name"
         type="text"
         class="form-control" 
         placeholder="Entrez votre prénom"
@@ -22,7 +23,7 @@
         required 
         minlength="3"
         maxlength="10"
-        ngModel 
+        [(ngModel)]="lastname"
         name="lastname"
         type="text"
         class="form-control" 
@@ -36,7 +37,7 @@
           required 
           minlength="3"
           maxlength="10"
-          ngModel 
+          [(ngModel)]="job"
           name="job" 
           type="text"
           class="form-control" 
@@ -50,7 +51,7 @@
       required 
       minlength="3"
       maxlength="10"
-      ngModel 
+      [(ngModel)]="email"
       name="email" 
       type="email" 
       class="form-control" 
@@ -65,7 +66,7 @@
     required 
     minlength="3"
     maxlength="10"
-    ngModel 
+    [(ngModel)]="password"
     name="password" 
     type="password" 
     class="form-control" 
@@ -73,7 +74,7 @@
     >
   </div>
 
-  <button class="btn btn-primary ">Valider</button>
+  <button class="btn btn-primary " (click)="register()">Valider</button>
 
   <a routerLink="/home" class="form_link">Retour</a>
 
