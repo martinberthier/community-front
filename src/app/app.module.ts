@@ -1,3 +1,4 @@
+import { JwtInterceptor } from './shared/helpers/jwt.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -7,10 +8,10 @@ import { FormLoginComponent } from './form-login/form-login.component';
 import { FormRegisterComponent } from './form-register/form-register.component';
 import { CategoryComponent } from './category/category.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostEditComponent } from './post-edit/post-edit.component'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
@@ -18,6 +19,7 @@ import { PostListByCategoryComponent } from './post-list-by-category/post-list-b
 
 //service
 import {SigninService} from './services/signinService';
+import { ErrorInterceptor } from './shared/helpers/error.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,10 +38,24 @@ import {SigninService} from './services/signinService';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    // JwtModule.forRoot({
+    //   config: {
+    //     tokenGetter: function  tokenGetter() {
+    //          return     localStorage.getItem('token');},
+    //     whitelistedDomains: ['localhost:4200'],
+    //     // blacklistedRoutes: ['http://localhost:4200/auth/login']
+    //   }
+    // })
   ],
-  providers: [SigninService],
+  providers: [
+    SigninService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
+ 
 
 })
 export class AppModule { }

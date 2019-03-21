@@ -9,7 +9,7 @@ export class SigninService {
   private actionUrl: string;
 
   constructor(private http: HttpClient) {
-    this.actionUrl = '//localhost:8080/community/users/';
+    this.actionUrl = '//localhost:8080/ano/users/';
   }
 
   public register(email: string, password: string, lastname: string, name: string, job: string) {

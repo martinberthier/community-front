@@ -6,5 +6,6 @@ export class User {
     job: string;
     email: string;
     password: string;
+    token?: string;
   }
   
