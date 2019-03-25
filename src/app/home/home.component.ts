@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { JwtService } from '../shared/jwt/jwt.service';
 
 @Component({
   selector: 'home',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  userName = localStorage.getItem('currentUserName');
+  userLastName = localStorage.getItem('currentUserLastName');
+  userJob = localStorage.getItem('currentUserJob');
+
+  constructor(private jwtService: JwtService,) { }
 
   ngOnInit() {
   }

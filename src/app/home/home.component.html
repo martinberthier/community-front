@@ -2,20 +2,28 @@
 <div id="body">
 <navbar></navbar>
 
+<h1  *ngIf="jwtService.loggedIn()">
+    Bonjour 
+    {{ userName | titlecase }}
+    {{ userLastName | titlecase }}
+</h1>
 
-<searchbar></searchbar>
+<h2 *ngIf="jwtService.loggedIn()">
+    {{ userJob | titlecase }}
+</h2>
 
-<category></category>
+<searchbar *ngIf="jwtService.loggedIn()"></searchbar>
+
+<category *ngIf="jwtService.loggedIn()" ></category>
 
 <!-- <post-list></post-list> -->
 
 
 
-<h1>Hello</h1>
+<!-- <h1>Hello</h1>
 <h2>C'est un test</h2>
-<p>daokdza dkazo dkazodk azkdaoz kdozak doakzdoazk dokazodka ozkdoazk doazkd okzado </p>
+<p>daokdza dkazo dkazodk azkdaoz kdozak doakzdoazk dokazodka ozkdoazk doazkd okzado </p> -->
 
-<post-list></post-list>
 
 
 </div>

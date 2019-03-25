@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap, map } from 'rxjs/operators';
@@ -37,13 +38,42 @@ login(email: string, password: string) {
           if (user && user.token) {
               // store user details and jwt token in local storage to keep user logged in between page refreshes
               // localStorage.setItem('currentUser', JSON.stringify(user));
-              localStorage.setItem('currentUser', user.token);
+              localStorage.setItem('currentUserToken', user.token);
+              localStorage.setItem('currentUserName', user.user.name);
+              localStorage.setItem('currentUserLastName', user.user.lastname);
+              localStorage.setItem('currentUserJob', user.user.job);
               this.currentUserSubject.next(user);
+              console.log(user);
           }
-          console.log(user.json())
+          // console.log(user.json())
           return user;
       }));
 }
+// public get loggedIn(): boolean{
+//   // let token = localStorage.getItem('currentUserToken')
+//   // if (!token)
+//   // return false;
+
+//   // return true;
+//   return localStorage.getItem('currentUserToken') !==  null;
+//   }
+
+public loggedIn(){
+  return localStorage.getItem('currentUserToken');
+}
+
+  public logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('currentUserToken');
+    localStorage.removeItem('currentUserName');
+    localStorage.removeItem('currentUserLastName');
+    localStorage.removeItem('currentUserJob');
+    this.currentUserSubject.next(null);
+  }
+
+// public get loggedIn(): boolean{
+//   return localStorage.getItem('currentUserToken') !==  null;
+//   }
 // pour accéder aux valeurs du header : sessionStorage.getItem
 
 
@@ -66,12 +96,6 @@ login(email: string, password: string) {
 //   console.log( res.access_token)
 // }))
 // }
-
-logout() {
-  // remove user from local storage to log user out
-  localStorage.removeItem('currentUser');
-  this.currentUserSubject.next(null);
-}
 
 //B
 //   login(email:string, password:string) {
@@ -118,8 +142,6 @@ logout() {
 //   localStorage.removeItem('access_token');
 //   }
 
-public get loggedIn(): boolean{
-  return localStorage.getItem('access_token') !==  null;
-  }
+
 
 }

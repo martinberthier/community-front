@@ -15,6 +15,7 @@ nav ul a li{
 nav ul a:hover{
     text-decoration: none;
     background-color: black;
+    cursor: pointer;
 }
 nav ul a:hover li{
     color: white;

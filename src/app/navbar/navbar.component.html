@@ -6,13 +6,14 @@
       <a routerLink="home">
           <li>Accueil</li>
       </a>
-      <a [routerLink]="['/form-login']">
+      <a *ngIf="!jwtService.loggedIn()" [routerLink]="['/form-login']">
           <li>Connexion</li>
       </a>
-      <a [routerLink]="['/form-register']">
+      <a *ngIf="!jwtService.loggedIn()" [routerLink]="['/form-register']">
           <li>S'inscrire</li>
       </a>
-      <a [routerLink]="['/form-register']">
+
+    <a *ngIf="jwtService.loggedIn()" (click)="logout()">
         <li>Se déconnecter</li>
     </a>
   </ul>

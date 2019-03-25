@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { JwtService } from './../shared/jwt/jwt.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'navbar',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private jwtService: JwtService, private router: Router) { }
 
   ngOnInit() {
+  }
+  
+  public logout(){
+    this.jwtService.logout();
+    this.router.navigate(['/']);
+    location.reload();
   }
 
 }
