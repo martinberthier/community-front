@@ -12,7 +12,7 @@ export class SigninService {
     this.actionUrl = '//localhost:8080/ano/users/';
   }
 
-  public register(email: string, password: string, lastname: string, name: string, job: string) {
+  public register(email: string, lastname: string, name: string, password: string, job: string) {
     const newUser: User = new User();
     newUser.name = name;
     newUser.lastname = lastname;

@@ -12,14 +12,14 @@ export class FormRegisterComponent implements OnInit {
   public job : string;
   public lastname : string;
   public name : string;
-  constructor(private _signingSerivce:SigninService, private _router: Router) { }
+  constructor(private signingSerivce:SigninService, private router: Router) { }
 
   ngOnInit() {
   }
 
   public register()  {
-    this._signingSerivce.register(this.email, this.lastname, this.name, this.password, this.password).subscribe((data: string) => {
-      this._router.navigateByUrl('/home');
+    this.signingSerivce.register(this.email, this.lastname, this.name, this.password, this.job).subscribe((data: string) => {
+      this.router.navigateByUrl('/home');
     },
   );
 

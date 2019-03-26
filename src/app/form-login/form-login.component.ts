@@ -25,18 +25,6 @@ export class FormLoginComponent implements OnInit {
     private router: Router,
   ) { }
 
-
-  //A
-  // signIn(credentials) {
-  //   this.jwtService.login(credentials)
-  //   .subscribe(result => {
-  //     if (result)
-  //     this.router.navigate(['/']);
-  //     else
-  //     this.invalidLogin = true;
-  //   })
-  // }
-
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
@@ -49,26 +37,6 @@ export class FormLoginComponent implements OnInit {
 
 // convenience getter for easy access to form fields
 get f() { return this.loginForm.controls; }
-
-// onSubmit() {
-//   this.submitted = true;
-
-//   // stop here if form is invalid
-//   if (this.loginForm.invalid) {
-//     this.invalidForm = true;
-//       return;
-//   }
-//   this.jwtService.login(this.f.email.value, this.f.password.value)
-//       .pipe(first())
-//       .subscribe(
-//           data => {
-//               this.router.navigate(['/']);
-//           },
-//           error => {
-//               this.error = error;
-//               this.invalidLogin = true;
-//           });
-//   }
 
 onSubmit() {
   this.submitted = true;

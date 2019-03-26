@@ -1,24 +1,38 @@
-<h1>{{category}}</h1>
+<div id="body">
 
-<article class="comment" *ngFor="let post of posts">
-  
-  <img  id="giphy" src="{{post.giphyUrl}}" > <br/>
+  <section class="page_content">
 
-  <!-- <p class="comment_p"> {{post.content}} </p> -->
+    <h1 id="categoryTitle">{{ category | titlecase }}</h1>
 
+    <hr>
 
-  <a [routerLink]="['/post-edit', post.id]">{{post.content}}</a>
+    <article class="comment" *ngFor="let post of posts">
 
-  <!-- <p class="comment_name">
-     <strong> {{post.user.name}}
-  {{post.user.lastname}} </strong>
-  {{post.user.job}}
-</p> -->
-  <hr>
+      <p class="authorInfo">
+        <span class="authorName">{{post.user.name | titlecase }} {{post.user.lastname | titlecase }} </span>
+        <span class="authorJob"> - {{post.user.job | titlecase }} </span>
+      </p>
 
 
-</article>
+      <img id="giphy" src="{{post.giphyUrl}}"> <br />
 
-<!-- <input type="text" placeholder="Ecrire un commentaire..." class="comment_answer"> -->
+      <p class="comment_p"> {{post.content}} </p>
 
-<button [routerLink]="['/post-add']">Add</button>
+      <!-- EDIT -->
+      <!-- <a [routerLink]="['/post-edit', post.id]">{{post.content}}</a> -->
+
+
+      <hr>
+
+
+    </article>
+
+    <!-- <input type="text" placeholder="Ecrire un commentaire..." class="comment_answer"> -->
+
+    <button [routerLink]="['/post-add']" class="btn btn-primary ">Ajouter</button>
+
+    <a routerLink="/home" class="form_link">Retour</a>
+
+  </section>
+
+</div>
