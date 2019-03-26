@@ -1,9 +1,11 @@
+
+
 #categoryTitle {
   margin-bottom: 20px;
 }
 
 .authorInfo {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   margin-bottom: 0;
 }
 
@@ -12,18 +14,14 @@
 }
 
 .authorJob {
-  font-weight: 100;
+    font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-style: italic;
 }
 
 .comment_p {
   font-size: 1.3rem;
-}
-
-.page_content {
-  padding: 0px 8% 80px 8%;
-  width: 70%;
-  margin: 80px auto;
-  background: white;
 }
 
 #giphy {
@@ -33,54 +31,61 @@
 }
 
 a.form_link {
-    list-style: none;
-    text-decoration: none;
-    display: block;
-    font-weight: bold;
-    color: black;
-    margin-top: 30px;
-    width: 50px;
-  }
-  
-  a.form_link:hover {
-    text-decoration: none;
-    color: white;
-    background-color: black
-  }
+  list-style: none;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+  color: black;
+  margin-top: 30px;
+  width: 50px;
+}
 
-  .btn-primary {
-    color: #fff;
-    background-color: black;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 0.8rem;
-    border: none;
-  }
-  
-  .btn {
-    float: right;
-    margin-top: 20px;
-    background: black;
-  }
+a.form_link:hover {
+  text-decoration: none;
+  color: white;
+  background-color: black
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8rem;
+  border: none;
+}
+
+.btn {
+  float: right;
+  margin-top: 20px;
+  background: black;
+}
 
 @media (max-width: 640px) {
-  /* CSS mobile ici */
-
-  .page_content {
-    padding: 0px 8% 80px 8%;
-    // width: 70%;
-    margin: 40px auto 80px auto;
-    background: white;
+    /* CSS mobile ici */
+  
+    .page_content {
+      padding: 0px 8% 80px 8%;
+      // width: 70%;
+      margin: 40px auto 80px auto;
+      background: white;
+    }
+  
+    #categoryTitle {
+      padding-top: 0;
+      margin-bottom: 20px;
+    }
   }
-
-  #categoryTitle {
-    padding-top: 0;
-    margin-bottom: 20px;
-  }
-}
 
 @media (min-width: 641px) {
   /* CSS dekstop ici */
+
+  .page_content {
+    padding: 0px 8% 80px 8%;
+    width: 70%;
+    margin: 40px auto 80px auto;
+    background: white;
+  }
 
   @keyframes Gradient {
     0% {

@@ -41,3 +41,14 @@
     border-radius: 50%;
     color:white;
     }
+
+    @media (max-width: 640px) {
+        /* CSS mobile ici */
+      
+        .searchbar:hover > .search_input{
+            padding: 0 10px;
+            width: 240px;
+            caret-color:red;
+            transition: width 0.4s linear;
+            }
+      }

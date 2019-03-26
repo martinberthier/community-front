@@ -1,30 +1,64 @@
-
+<div id="body">
+  
   <form #postForm="ngForm" (ngSubmit)="save(postForm.value)">
    
-      <h2>{{post.content ? 'Edit' : 'Add'}} post</h2>
+      <h3>{{post.content ? 'Editer' : 'Ajouter'}} un commentaire</h3>
     
     
-      <input type="hidden" name="href" [(ngModel)]="post.href">
+      <input 
+      type="hidden" 
+      name="href" 
+      [(ngModel)]="post.href"
+      >
       
         <!-- <input placeholder="post Name" [(ngModel)]="post.name"
                required name="name" #name> -->
-     <input placeholder="post Tag" [(ngModel)]="post.tag"
-      required name="tag" #tag>
 
-      <input placeholder="post content" [(ngModel)]="post.content"
-      required name="content" #content>
-  
-   
+          <textarea 
+          placeholder="Entre votre message" 
+       [(ngModel)]="post.content"
+          name="content" 
+          id="" 
+          cols="20" 
+          rows="10"
+          #content
+          >
+        </textarea>
+        <br>
+        <br>
+
+     <input 
+     placeholder="Mot-clé Giphy" 
+     [(ngModel)]="post.tag"
+     name="tag" 
+     #tag
+     >
+    
+
+      <!-- <input
+       placeholder="Entre votre message" 
+       [(ngModel)]="post.content"
+      required 
+      name="content" 
+      #content
+      > -->
+ 
+          <br>
       <button type="submit"
-              [disabled]="!postForm.form.valid">Save</button>
+              [disabled]="!postForm.form.valid"
+              class="btn btn-primary ">Envoyer</button>
 
       <button (click)="remove(post.id)"
-              *ngIf="post.id" type="button">Delete</button>
-
-      <a routerLink="/post-list">Cancel</a>
-
+              *ngIf="post.id" type="button"
+              class="btn btn-primary ">Supprimer</button>
+              <br>
+              <br>
+      <a routerLink="/home" class="form_link">Retour</a>
+      <br>
+      <br>
       <div class="giphy">
         <img src="{{post.giphyUrl}}" >
       </div>
 
   </form>
+</div>

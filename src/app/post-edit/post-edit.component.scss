@@ -1,0 +1,135 @@
+textarea{
+    height: 80px;
+}
+
+body#form {
+    // background-image: url(../images/home.png);
+    background-size: 100%;
+  }
+  
+  form {
+    padding: 50px 8% 0 8%;
+    width: 500px;
+    /* margin: 200px auto; */
+    margin: 80px auto 0 auto;
+    background: white;
+  }
+  
+  .info-form {
+    margin-top: 30px;
+  }
+
+  input, button, select, optgroup, textarea {
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+  
+  .btn-primary {
+    color: #fff;
+    background-color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border: none;
+  }
+  
+  .btn {
+    float: right;
+    margin-top: 20px;
+    background: black;
+  }
+  
+  a.form_link {
+    list-style: none;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    color: black;
+    margin-top: 30px;
+    width: 50px;
+  }
+  
+  a.form_link:hover {
+    text-decoration: none;
+    color: white;
+    background-color: black
+  }
+  
+  .inlineBtn {
+    list-style: none;
+    text-decoration: none;
+    display: inline;
+    font-weight: bold;
+    color: black;
+    // margin-top: 40px;
+    // width: 50px;
+  }
+  
+  .inlineBtn:hover {
+    text-decoration: none;
+    color: white;
+    background-color: black
+  }
+  
+  ::-webkit-file-upload-button {
+    background: black;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+
+
+
+@media (max-width: 640px) {
+    /* CSS mobile ici */
+  
+    form {
+      margin-top: 0;
+      padding: 50px 8% 80px 8%;
+      width: 100%;
+    }
+  }
+  
+  
+  @media (min-width: 641px) {
+  
+    /* CSS dekstop ici */
+    @keyframes Gradient {
+      0% {
+        background-position: 0 50%
+      }
+  
+      50% {
+        background-position: 100% 50%
+      }
+  
+      to {
+        background-position: 0 50%
+      }
+    }
+  
+    #body {
+      background: -webkit-gradient(linear, left top, right top, color-stop(1.72%, #e76973), color-stop(23.88%, rgba(241, 137, 95, .8)), color-stop(49.2%, rgba(255, 231, 137, .8)), color-stop(75.2%, #99cead), color-stop(95.93%, #97d1ce)), #fff;
+      background: linear-gradient(90deg, #e76973 1.72%, rgba(241, 137, 95, .8) 23.88%, rgba(255, 231, 137, .8) 49.2%, #99cead 75.2%, #97d1ce 95.93%), #fff;
+      background-size: 600% 600%;
+      // position: fixed;
+      overflow-y: scroll;
+      -webkit-animation: Gradient 10s ease infinite;
+      animation: Gradient 10s ease infinite;
+      height: 100vh;
+      width: 100vw;
+      z-index: 100;
+      -webkit-transition: 1s;
+      transition: 1s
+    }
+  }
+  
