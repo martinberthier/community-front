@@ -14,6 +14,7 @@ export class PostListByCategoryComponent implements OnInit {
   posts: Array<any>;
   sub: Subscription;
   category: String;
+
   
   constructor(private postService: PostService, private giphyService: GiphyService, private route: ActivatedRoute) { }
 
@@ -38,4 +39,9 @@ export class PostListByCategoryComponent implements OnInit {
       }
     })
   }
+
+  public AuthorLogged(){
+    return localStorage.getItem('currentUserId')
+  }
+
 }

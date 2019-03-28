@@ -21,6 +21,11 @@
       <!-- EDIT -->
       <!-- <a [routerLink]="['/post-edit', post.id]">{{post.content}}</a> -->
 
+      <button 
+      *ngIf="AuthorLogged()==post.user.id"
+      [routerLink]="['/post-edit', post.id]" 
+      class="btn-edit btn-primary ">Modifier</button>
+
 
       <hr>
 

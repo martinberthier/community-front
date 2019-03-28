@@ -42,6 +42,7 @@ login(email: string, password: string) {
               localStorage.setItem('currentUserName', user.user.name);
               localStorage.setItem('currentUserLastName', user.user.lastname);
               localStorage.setItem('currentUserJob', user.user.job);
+              localStorage.setItem('currentUserId', user.user.id);
               this.currentUserSubject.next(user);
               console.log(user);
           }
@@ -49,14 +50,6 @@ login(email: string, password: string) {
           return user;
       }));
 }
-// public get loggedIn(): boolean{
-//   // let token = localStorage.getItem('currentUserToken')
-//   // if (!token)
-//   // return false;
-
-//   // return true;
-//   return localStorage.getItem('currentUserToken') !==  null;
-//   }
 
 public loggedIn(){
   return localStorage.getItem('currentUserToken');
@@ -68,6 +61,7 @@ public loggedIn(){
     localStorage.removeItem('currentUserName');
     localStorage.removeItem('currentUserLastName');
     localStorage.removeItem('currentUserJob');
+    localStorage.removeItem('currentUserId');
     this.currentUserSubject.next(null);
   }
 

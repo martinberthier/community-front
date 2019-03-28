@@ -2,6 +2,13 @@ textarea{
     height: 80px;
 }
 
+img {
+  vertical-align: middle;
+  border-style: none;
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+
 body#form {
     // background-image: url(../images/home.png);
     background-size: 100%;
@@ -11,7 +18,7 @@ body#form {
     padding: 50px 8% 0 8%;
     width: 500px;
     /* margin: 200px auto; */
-    margin: 80px auto 0 auto;
+    margin: 80px auto 80px auto;
     background: white;
   }
   
@@ -39,7 +46,9 @@ body#form {
   .btn {
     float: right;
     margin-top: 20px;
+    margin-left: 20px;
     background: black;
+    width: 60px;
   }
   
   a.form_link {
