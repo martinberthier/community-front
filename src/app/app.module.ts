@@ -20,6 +20,7 @@ import { PostListByCategoryComponent } from './post-list-by-category/post-list-b
 //service
 import {SigninService} from './services/signinService';
 import { ErrorInterceptor } from './shared/helpers/error.interceptor';
+import { ArraySortPipePipe } from './shared/arraySortPipe/array-sort-pipe.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { ErrorInterceptor } from './shared/helpers/error.interceptor';
     HomeComponent,
     SearchbarComponent,
     PostListByCategoryComponent,
+    ArraySortPipePipe,
     
   ],
   imports: [

@@ -6,7 +6,7 @@
 
     <hr>
 
-    <article class="comment" *ngFor="let post of posts">
+    <article class="comment" *ngFor="let post of posts | arraySortPipe : 'id'">
 
       <p class="authorInfo">
         <span class="authorName">{{post.user.name | titlecase }} {{post.user.lastname | titlecase }} </span>
