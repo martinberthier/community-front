@@ -19,7 +19,7 @@ const routes: Routes = [
     component: PostListComponent
   },
   {
-    path: 'post-add',
+    path: 'post-add/:idCategory',
     component: PostEditComponent
   },
   {
