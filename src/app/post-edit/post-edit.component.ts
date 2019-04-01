@@ -14,8 +14,20 @@ export class PostEditComponent implements OnInit, OnDestroy {
 
   post: any = {};
   public id : string;
-
+  // public userId : String;
+  // public categoryId : String;
   sub: Subscription;
+
+  // post: {
+  //   category: {
+  //     idCategory: any
+  //   },
+  //   content: String,
+  //   tag: String,
+  //   user: {
+  //     userId: any,
+  //   }
+  // }
 
 
   constructor(
@@ -27,6 +39,7 @@ export class PostEditComponent implements OnInit, OnDestroy {
  
 
   ngOnInit() {
+    
   
     this.sub = this.route.params.subscribe(params => {
       const id = params['id'];
@@ -35,7 +48,8 @@ export class PostEditComponent implements OnInit, OnDestroy {
           if (post) {
             this.post = post;
             console.log(this.post);
-            // this.post.href = post._links.self.href;
+            //this.post.href = post._links.self.href;
+            
             this.giphyService.get(post.tag).subscribe(url => post.giphyUrl = url);
           } else {
             console.log(`Post with id '${id}' not found, returning to list`);
@@ -46,21 +60,47 @@ export class PostEditComponent implements OnInit, OnDestroy {
     });
   }
 
+//   save(form: NgForm) {
+//     this.sub = this.route.params.subscribe(params => {
+//       const idCategory = params['idCategory'];
+
+//     console.log(form)
+//     this.postService.save(form).subscribe(result => {
+//      // this.gotoList();
+//       this.router.navigate(['/home']);
+//     }, error => console.error(error));
+//     });
+// }
+//A
+  save(form: NgForm) {
+    this.sub = this.route.params.subscribe(params => {
+      const idCategory = params['idCategory'];
+
+    console.log(form)
+    this.postService.save(form, idCategory).subscribe(result => {
+     // this.gotoList();
+      this.router.navigate(['/home']);
+    }, error => console.error(error));
+    });
+}
+
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
 
   gotoList() {
-    this.router.navigate(['/post-list']);
+    this.router.navigate(['/home']);
   }
 
-  save(form: NgForm) {
-    this.postService.save(form).subscribe(result => {
-      this.gotoList();
-    }, error => console.error(error));
-  }
+  // save(form: NgForm) {
+  //   console.log(form)
+  //   this.postService.save(form).subscribe(result => {
+  //     //this.gotoList();
+  //     this.router.navigate(['/home']);
+  //   }, error => console.error(error));
+  // }
 
-  remove(id) {
+   remove(id) {
     this.postService.remove(id).subscribe(result => {
       this.gotoList();
     }, error => console.error(error));
