@@ -47,7 +47,7 @@ export class PostEditComponent implements OnInit, OnDestroy {
         this.postService.get(id).subscribe((post: any) => {
           if (post) {
             this.post = post;
-            console.log(this.post);
+            console.log("ngOnInit ::::",this.post);
             //this.post.href = post._links.self.href;
             
             this.giphyService.get(post.tag).subscribe(url => post.giphyUrl = url);
@@ -72,17 +72,34 @@ export class PostEditComponent implements OnInit, OnDestroy {
 //     });
 // }
 //A
-  save(form: NgForm) {
-    this.sub = this.route.params.subscribe(params => {
-      const idCategory = params['idCategory'];
 
-    console.log(form)
-    this.postService.save(form, idCategory).subscribe(result => {
-     // this.gotoList();
-      this.router.navigate(['/home']);
-    }, error => console.error(error));
-    });
+//maintenant
+save(form: NgForm) {
+  this.sub = this.route.params.subscribe(params => {
+    const idCategory = params['idCategory'];
+    const idCategory2 = this.post.category.id;
+    const idPost =  params['id'];
+
+  console.log("form = ",form)
+  this.postService.save(form, idCategory, idPost,idCategory2).subscribe(result => {
+   // this.gotoList();
+    this.router.navigate(['/home']);
+  }, error => console.error(error));
+  });
 }
+
+//après alexis
+//   save(form: NgForm) {
+//     this.sub = this.route.params.subscribe(params => {
+//       const idCategory = params['idCategory'];
+
+//     console.log(form)
+//     this.postService.save(form, idCategory).subscribe(result => {
+//      // this.gotoList();
+//       this.router.navigate(['/home']);
+//     }, error => console.error(error));
+//     });
+// }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
