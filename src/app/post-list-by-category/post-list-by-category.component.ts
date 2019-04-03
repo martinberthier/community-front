@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -27,6 +28,7 @@ export class PostListByCategoryComponent implements OnInit {
         this.postService.getAllByCategory(id).subscribe(response => {
           // console.log("response", response);
           this.posts = response ;
+          // this.category = response[0].category.name;
           this.category = response[0].category.name;
           this.categoryId = response[0].category.id;
           // console.log(this.category);

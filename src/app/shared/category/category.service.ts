@@ -12,4 +12,7 @@ export class CategoryService {
   getAll(): Observable<any> {
     return this.http.get('//localhost:8080/community/categories');
     }
+    getCategoryById(id): Observable<any> {
+      return this.http.get('//localhost:8080/community/categories/'+id);
+      }
 }

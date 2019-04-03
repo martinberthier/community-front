@@ -36,7 +36,9 @@ export class PostEditComponent implements OnInit, OnDestroy {
     private postService: PostService,
     private giphyService: GiphyService
   ) { }
- 
+
+  
+   
 
   ngOnInit() {
     
@@ -60,33 +62,46 @@ export class PostEditComponent implements OnInit, OnDestroy {
     });
   }
 
-//   save(form: NgForm) {
-//     this.sub = this.route.params.subscribe(params => {
-//       const idCategory = params['idCategory'];
+  //maintenant2
+  save(form: NgForm) {
+    let idPost =null;
+    let idCategory2 ="pas de idCategory2";
 
-//     console.log(form)
-//     this.postService.save(form).subscribe(result => {
-//      // this.gotoList();
-//       this.router.navigate(['/home']);
-//     }, error => console.error(error));
-//     });
-// }
-//A
+    this.sub = this.route.params.subscribe(params => {
+      const idCategory = params['idCategory'];
+
+      if(params['id'] && this.post.category.id){
+        const idPost =  params['id']
+        const idCategory2 =  this.post.category.id
+      
+    console.log("form = ",form)
+    this.postService.save(form, idCategory, idPost,idCategory2).subscribe(result => {
+     // this.gotoList();
+      this.router.navigate(['/home']);
+    }, error => console.error(error));
+    } else {
+      this.postService.save(form, idCategory, idPost,idCategory2).subscribe(result => {
+        // this.gotoList();
+         this.router.navigate(['/home']);
+       }, error => console.error(error));
+    };
+    });
+  }
 
 //maintenant
-save(form: NgForm) {
-  this.sub = this.route.params.subscribe(params => {
-    const idCategory = params['idCategory'];
-    const idCategory2 = this.post.category.id;
-    const idPost =  params['id'];
+// save(form: NgForm) {
+//   this.sub = this.route.params.subscribe(params => {
+//     const idCategory = params['idCategory'];
+//     const idCategory2 = this.post.category.id;
+//     const idPost =  params['id'];
 
-  console.log("form = ",form)
-  this.postService.save(form, idCategory, idPost,idCategory2).subscribe(result => {
-   // this.gotoList();
-    this.router.navigate(['/home']);
-  }, error => console.error(error));
-  });
-}
+//   console.log("form = ",form)
+//   this.postService.save(form, idCategory, idPost,idCategory2).subscribe(result => {
+//    // this.gotoList();
+//     this.router.navigate(['/home']);
+//   }, error => console.error(error));
+//   });
+// }
 
 //après alexis
 //   save(form: NgForm) {

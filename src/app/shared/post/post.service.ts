@@ -32,37 +32,59 @@ getAll(): Observable<any> {
   get(id: string) {
     return this.http.get('//localhost:8080/community/comments' + '/' + id);
   }
+//maintenant2
+save(form: any, idCategory:any, idPost:any, idCategory2:any): Observable<any> {
+  let result: Observable<Object>;
 
-  //maintenant
-  save(form: any, idCategory:any, idPost:any, idCategory2:any): Observable<any> {
-    //console.log("testeee",form)
-    let result: Observable<Object>;
-
-    const post= {
-      category: {
-        id: idCategory
-      },
-      id: idPost,
-      content: form.content,
-      tag: form.tag,
-      user: {
-        id: localStorage.getItem('currentUserId'),
-      }
+  const post= {
+    category: {
+      id: idCategory
+    },
+    id: idPost,
+    content: form.content,
+    tag: form.tag,
+    user: {
+      id: localStorage.getItem('currentUserId'),
     }
-    console.log("post ====", post)
-    // if (form['href']) {//ici il faudrait mettre post.id au lieu de href
-    //   result = this.http.put(form.href, form);
-      if (post.id) {//ici il faudrait mettre post.id au lieu de href
-        //this.post.id = 
-        post.category.id= idCategory2;
-        console.log("on fait un put", post.id, post)
-        result = this.http.put('//localhost:8080/community/comments/'+ post.id, post);
-    } else {
-        console.log("category id de ce post", idCategory);//affiche l'id en question
-      result = this.http.post('//localhost:8080/community/comments/', post);
-    }
-    return result;
   }
+  console.log("post ====", post)
+    if (post.id) {
+      post.category.id= idCategory2;
+      console.log("on fait un put", post.id, post)
+      result = this.http.put('//localhost:8080/community/comments/'+ post.id, post);
+  } else {
+      console.log("category id de ce post", idCategory);//affiche l'id en question
+    result = this.http.post('//localhost:8080/community/comments/', post);
+  }
+  return result;
+}
+  //maintenant
+  // save(form: any, idCategory:any, idPost:any, idCategory2:any): Observable<any> {
+  //   let result: Observable<Object>;
+
+  //   const post= {
+  //     category: {
+  //       id: idCategory
+  //     },
+  //     id: idPost,
+  //     content: form.content,
+  //     tag: form.tag,
+  //     user: {
+  //       id: localStorage.getItem('currentUserId'),
+  //     }
+  //   }
+  //   console.log("post ====", post)
+  //     if (post.id) {
+  //       console.log("on fait un put")
+  //       post.category.id= idCategory2;
+  //       console.log("on fait un put", post.id, post)
+  //       result = this.http.put('//localhost:8080/community/comments/'+ post.id, post);
+  //   } else {
+  //       console.log("category id de ce post", idCategory);//affiche l'id en question
+  //     result = this.http.post('//localhost:8080/community/comments/', post);
+  //   }
+  //   return result;
+  // }
 
   //après alexis
   // save(form: any, idCategory:any): Observable<any> {
