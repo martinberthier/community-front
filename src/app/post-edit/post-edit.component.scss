@@ -1,7 +1,9 @@
 textarea{
     height: 80px;
 }
-
+input{
+  font-size: 1.4rem;
+}
 img {
   vertical-align: middle;
   border-style: none;
@@ -16,7 +18,7 @@ body#form {
   
   form {
     padding: 50px 8% 0 8%;
-    width: 500px;
+    width: 600px;
     /* margin: 200px auto; */
     margin: 80px auto 80px auto;
     background: white;
@@ -39,8 +41,9 @@ body#form {
     background-color: black;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 1.4rem;
     border: none;
+    padding: 3px 8px;
   }
   
   .btn {
@@ -48,7 +51,7 @@ body#form {
     margin-top: 20px;
     margin-left: 20px;
     background: black;
-    width: 60px;
+    width: 95px;
   }
   
   a.form_link {

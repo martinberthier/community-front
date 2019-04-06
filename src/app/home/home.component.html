@@ -1,8 +1,14 @@
 
 <div id="body">
-    <a routerLink="app">
+        <!-- <navbar2></navbar2> -->
+    <a routerLink="app" *ngIf="!jwtService.loggedIn()">
+        <img class="logoCenter" src="assets/images/logo_community.svg" alt="logo">
+    </a>
+
+    <a routerLink="app" *ngIf="jwtService.loggedIn()">
         <img class="logo" src="assets/images/logo_community.svg" alt="logo">
     </a>
+
     <navbar></navbar>
 <h1  *ngIf="jwtService.loggedIn()">
     Bonjour 
@@ -17,6 +23,8 @@
 <searchbar *ngIf="jwtService.loggedIn()"></searchbar>
 
 <category *ngIf="jwtService.loggedIn()" ></category>
+
+<footer></footer>
 
 <!-- <post-list></post-list> -->
 

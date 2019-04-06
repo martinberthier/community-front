@@ -2,10 +2,12 @@ body#form {
   // background-image: url(../images/home.png);
   background-size: 100%;
 }
-
+input{
+  font-size: 1.4rem;
+}
 form {
   padding: 50px 100px;
-  width: 500px;
+  width: 600px;
   /* margin: 200px auto; */
   margin: 80px auto;
   background: white;
@@ -16,7 +18,7 @@ form {
   background-color: black;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 1.3rem;
   border: none;
 }
 
@@ -48,7 +50,7 @@ a.form_link:hover {
   color: white;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 0.8rem;
+  font-size: 1.3rem;
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 5px;

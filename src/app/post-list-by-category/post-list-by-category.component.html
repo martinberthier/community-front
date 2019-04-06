@@ -6,7 +6,8 @@
 
     <hr>
 
-    <article class="comment" *ngFor="let post of posts | arraySortPipe : 'id'">
+    <!-- <article class="comment" *ngFor="let post of posts | arraySortPipe : 'id'"> -->
+        <article class="comment" *ngFor="let post of posts| arraySortPipe : 'id'">
 
       <p class="authorInfo">
         <span class="authorName">
@@ -37,5 +38,7 @@
     <a routerLink="/home" class="form_link">Retour</a>
 
   </section>
+
+  <footer2></footer2>
 
 </div>

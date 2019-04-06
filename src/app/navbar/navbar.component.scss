@@ -4,20 +4,69 @@ nav ul{
     justify-content: center;
 }
 
-nav ul a li{
+nav ul a{
     list-style: none;
     text-decoration: none;
     display: inline;
     font-weight: bold;
-    font-size: 1.1em;
-    color: black;
+    font-size: 1.3em;
+    color: #343a40;
     margin: 0 30px;
+    border: 2px solid #343a40;
+    border-radius: 10px;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    text-align: center;
 }
+
 nav ul a:hover{
+    list-style: none;
     text-decoration: none;
-    background-color: black;
+    background: #343a40;
+    color: white;
     cursor: pointer;
 }
-nav ul a:hover li{
+
+@media (max-width: 640px) {
+    /* CSS mobile ici */
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+        justify-content: center;
+        margin-top: 50px;
+    }
+    nav ul a{
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+        width: 50%;
+        list-style: none;
+    text-decoration: none;
+    background: #343a40;
     color: white;
-}
+    cursor: pointer;
+    text-align: center;
+    }
+    
+
+  }
+
+// nav ul a li{
+//     list-style: none;
+//     text-decoration: none;
+//     display: inline;
+//     font-weight: bold;
+//     font-size: 1.1em;
+//     color: black;
+//     margin: 0 30px;
+// }
+// nav ul a:hover{
+//     text-decoration: none;
+//     background-color: black;
+//     cursor: pointer;
+// }
+// nav ul a:hover li{
+//     color: white;
+// }

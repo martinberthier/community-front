@@ -21,6 +21,9 @@ import { PostListByCategoryComponent } from './post-list-by-category/post-list-b
 import {SigninService} from './services/signinService';
 import { ErrorInterceptor } from './shared/helpers/error.interceptor';
 import { ArraySortPipePipe } from './shared/arraySortPipe/array-sort-pipe.pipe';
+import { Navbar2Component } from './navbar2/navbar2.component';
+import { FooterComponent } from './footer/footer.component';
+import { Footer2Component } from './footer2/footer2.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +37,9 @@ import { ArraySortPipePipe } from './shared/arraySortPipe/array-sort-pipe.pipe';
     SearchbarComponent,
     PostListByCategoryComponent,
     ArraySortPipePipe,
+    Navbar2Component,
+    FooterComponent,
+    Footer2Component,
     
   ],
   imports: [
